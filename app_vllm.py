@@ -147,7 +147,7 @@ def main():
                 
                 # 2. Analyse avec vLLM
                 llm = ChatOpenAI(
-                        base_url="https://4eaea0e9feac.ngrok-free.app/v1",
+                        base_url= vllm_url,
                         api_key="EMPTY",
                         model="./gemma-3-finetune",
                         max_completion_tokens=6000
@@ -176,7 +176,7 @@ def main():
                 st.error(f"Erreur: {e}")
                 st.info("Vérifiez que le serveur vLLM est lancé.")
         
-        # Afficher résultats (soit d'une nouvelle recherche, soit de l'état persistant)
+       
         if "analyses" in st.session_state:
             display_analyses(st.session_state["analyses"])
     
@@ -211,7 +211,7 @@ def display_analyses(analyses: list):
         emoji = "✅" if reco == "Go" else "❌" if reco == "No Go" else "🔍"
         color = "🟢" if score >= 7 else "🟡" if score >= 4 else "🔴"
         rows.append({
-            "idx": i,  # Garder l'index original
+            "idx": i, 
             "CV": a.get("source_file", "?"),
             "Score_num": score, 
             "Score": f"{color} {score}/10",
@@ -223,7 +223,7 @@ def display_analyses(analyses: list):
     df = pd.DataFrame(rows)
     df = df.sort_values(by="Score_num", ascending=False).reset_index(drop=True)
     
-    # Colonnes à afficher (cacher idx et Score_num)
+    # Colonnes à afficher 
     column_config = {
         "idx": None,
         "Score_num": None,
