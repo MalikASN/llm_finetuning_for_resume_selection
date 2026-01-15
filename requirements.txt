@@ -1,0 +1,28 @@
+# Core Framework
+streamlit>=1.28.0
+pandas>=2.0.0
+
+# LLM & LangChain
+langchain>=0.2.0
+langchain-openai>=0.1.0
+langchain-community>=0.2.0
+langchain-core>=0.2.0
+pydantic>=2.0.0
+
+# RAG - LlamaIndex
+llama-index>=0.10.0
+llama-index-core>=0.10.0
+llama-index-embeddings-huggingface>=0.2.0
+llama-index-vector-stores-chroma>=0.1.0
+
+# Vector Store
+chromadb>=0.4.0
+
+# Embeddings
+sentence-transformers>=2.2.0
+
+# PDF Processing
+pypdf>=3.0.0
+
+# Utils
+python-dotenv>=1.0.0
