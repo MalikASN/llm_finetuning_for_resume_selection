@@ -105,8 +105,7 @@ streamlit run app_vllm.py
 Create a `.env` file (optional):
 
 ```env
-VLLM_API_URL=http://localhost:8000/v1
-LORA_ADAPTER_NAME=cv-analyzer
+OPENAI_API_KEY for the semantic chunker
 ```
 
 ---
